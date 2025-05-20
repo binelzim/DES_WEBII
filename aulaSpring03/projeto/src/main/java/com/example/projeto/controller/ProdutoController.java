@@ -17,7 +17,7 @@ import com.example.projeto.model.Produto;
 @RequestMapping("/api/produtos")
 public class ProdutoController{
     
-    private final ProutoService produtoService;
+    private final ProdutoService produtoService;
 
     public ProdutoController(ProdutoService produtoService){
         this.produtoService = produtoService;

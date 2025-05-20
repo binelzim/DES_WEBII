@@ -12,10 +12,10 @@ public class ProdutoService{
     private final ProdutoRepository produtoRepository;
 
     public ProdutoService(ProdutoRepository produtoRepository){
-        this.produtpRepository = produtoRepository;
+        this.produtoRepository = produtoRepository;
     }
 
-    public List<Produto> listarProduto(){
+    public List<Produto> listarProdutos(){
         return produtoRepository.findAll();
     }
 

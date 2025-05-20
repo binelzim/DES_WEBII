@@ -12,19 +12,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
-@Table(name = "produto")
-
-public class Produto{
-
-    @Id 
+@Table(name = "produtos")
+public class Produto {
+    
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
     private Integer quantidade;
     private BigDecimal valor;
 
-    public Produto() {}
+    public Produto() {
+    }
 
     public Produto(String nome, Integer quantidade, BigDecimal valor){
         this.nome = nome;
@@ -32,23 +31,31 @@ public class Produto{
         this.valor = valor;
     }
 
-    public Long getId(){
+    public Long getId() {
         return id;
     }
 
-    public void setNome(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public void setQuantidade(Integer quantidade){
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 
-    public Integer getQuantidade(){
+    public Integer getQuantidade() {
         return quantidade;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
     }
 }
