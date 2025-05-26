@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Veiculos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <main class="main-content">
+
+        <h1>Cadastrar Veiculos</h1>
+        <form th:action="@{/veiculos/cadastrar}" th:object="${veiculo}" method="post">
+            <div>
+                <label>Modelo: </label>
+                <input type="text" th:field="*{modelo}" placeholder="Digite o modelo" />
+                <div th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"></div>
+            </div>
+
+            <div>
+                <label>Ano: </label>
+                <input type="number" th:field="*{ano}" placeholder="Digite o ano"/>
+                <div th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}"></div>
+            </div>
+
+            <div>
+                <label>Valor: </label>
+                <input type="number" th:field="*{valor}" placeholder="Digite o ano" />
+                <div th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></div>
+            </div>
+
+            <button type="submit" class="botao">Salvar</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <p>2025 Meu App</p>
+    </footer>
+</body>
+
+</html>

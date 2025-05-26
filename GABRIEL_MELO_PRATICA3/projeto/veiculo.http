@@ -1,0 +1,34 @@
+# Definição de variáveis (ambiente “local” do REST Client)
+@base_url = https://studious-carnival-5wx4g9jvp74f7pjx-8080.app.github.dev
+
+### Inserir novo veiculo
+POST {{ base_url }}/api/veiculos
+Content-Type: application/json
+
+{
+  "modelo": "Mercedes-Benz A 200",
+  "ano": 2021,
+  "valor": 190.900.00
+}
+
+### Listar todos os veiculos
+GET {{ base_url }}/api/veiculos
+Accept: application/json
+
+### Buscar veiculos por ID
+GET {{ base_url }}/api/veiculos/1
+Accept: application/json
+
+### Atualizar veiculo (PUT)
+PUT {{ base_url }}/api/veiculos/1
+Content-Type: application/json
+
+{
+  "modelo": "BMW 320i Sport GP",
+  "ano": 2023,
+  "valor": 239.950.00
+}
+
+### Remover veiculo (DELETE)
+DELETE {{ base_url }}/api/veiculos/1
+Accept: */*
