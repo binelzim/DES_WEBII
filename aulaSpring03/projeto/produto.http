@@ -1,5 +1,5 @@
 # Definição de variáveis (ambiente “local” do REST Client)
-@base_url = https://fantastic-enigma-7vr64vp69j653xg9g-8080.app.github.dev
+@base_url = https://studious-carnival-5wx4g9jvp74f7pjx-8080.app.github.dev
 
 ### Inserir novo produto
 POST {{ base_url }}/api/produtos

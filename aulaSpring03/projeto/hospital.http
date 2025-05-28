@@ -1,0 +1,40 @@
+# Definição de variáveis (ambiente “local” do REST Client)
+@base_url = https://curly-space-engine-jjgrrrg49w7php9ww-8080.app.github.dev
+
+### Inserir novo hospital
+POST {{base_url}}/api/hospitais
+Content-Type: application/json
+
+{
+  "nome": "Hospital Central",
+  "endereco": "Av. Principal, 123"
+}
+
+###
+
+### Listar todos os hospitais
+GET {{base_url}}/api/hospitais
+Accept: application/json
+
+###
+
+### Buscar hospital por ID
+GET {{base_url}}/api/hospitais/1
+Accept: application/json
+
+###
+
+### Atualizar hospital
+PUT {{base_url}}/api/hospitais/1
+Content-Type: application/json
+
+{
+  "nome": "Hospital Central - Unidade 1",
+  "endereco": "Av. Principal, 123"
+}
+
+###
+
+### Deletar hospital
+DELETE {{base_url}}/api/hospitais/1
+Accept: */*

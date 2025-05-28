@@ -3,6 +3,8 @@ package com.example.projeto.service;
 import org.springframework.stereotype.Service;
 import com.example.projeto.repository.PessoaRepository;
 import com.example.projeto.model.Pessoa;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -22,11 +24,13 @@ public class PessoaService{
     public Optional<Pessoa> buscarPorId(Long id){
         return pessoaRepository.findById(id);
     }
-
+    
+    @Transactional
     public Pessoa salvarPessoa(Pessoa pessoa){
         return pessoaRepository.save(pessoa);
     }
-
+    
+    @Transactional
     public void deletarPessoa(Long id){
         pessoaRepository.deleteById(id);
     }

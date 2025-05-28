@@ -1,0 +1,47 @@
+# Definição de variáveis (ambiente “local” do REST Client)
+@base_url = https://studious-carnival-5wx4g9jvp74f7pjx-8080.app.github.dev
+
+### Criar Conta vinculada a Pessoa existente
+POST {{base_url}}/api/contas
+Content-Type: application/json
+
+{
+  "username": "rafaelmarinho",
+  "senha": "leafar",
+  "pessoa": {
+    "id": 1
+  }
+}
+
+###
+
+### Criar Conta junto com nova Pessoa
+POST {{base_url}}/api/contas
+Content-Type: application/json
+
+{
+  "username": "maria456",
+  "senha": "outraSenha",
+  "pessoa": {
+    "nome": "Maria",
+    "idade": 30
+  }
+}
+
+###
+
+### Listar todas as contas
+GET {{base_url}}/api/contas
+Accept: application/json
+
+###
+
+### Buscar conta por ID
+GET {{base_url}}/api/contas/2
+Accept: application/json
+
+###
+
+### Deletar conta
+DELETE {{base_url}}/api/contas/2
+Accept: */*

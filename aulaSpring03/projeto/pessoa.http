@@ -1,25 +1,31 @@
 # Definição de variáveis (ambiente “local” do REST Client)
-@base_url = https://fantastic-enigma-7vr64vp69j653xg9g-8080.app.github.dev
+@base_url = https://studious-carnival-5wx4g9jvp74f7pjx-8080.app.github.dev
 
 ### Inserir nova pessoa
-POST {{ base_url }}/api/pessoas
+POST {{base_url}}/api/pessoas
 Content-Type: application/json
 
 {
-  "nome": "Rafael",
-  "idade": 34
+  "nome": "Gabriel",
+  "idade": 20
 }
 
+###
+
 ### Listar todas as pessoas
-GET {{ base_url }}/api/pessoas
+GET {{base_url}}/api/pessoas
 Accept: application/json
+
+###
 
 ### Buscar pessoa por ID
-GET {{ base_url }}/api/pessoas/3
+GET {{base_url}}/api/pessoas/1
 Accept: application/json
 
+###
+
 ### Atualizar pessoa (PUT)
-PUT {{ base_url }}/api/pessoas/1
+PUT {{base_url}}/api/pessoas/1
 Content-Type: application/json
 
 {
@@ -27,6 +33,8 @@ Content-Type: application/json
   "idade": 35
 }
 
+###
+
 ### Remover pessoa (DELETE)
-DELETE {{ base_url }}/api/pessoas/1
+DELETE {{base_url}}/api/pessoas/1
 Accept: */*

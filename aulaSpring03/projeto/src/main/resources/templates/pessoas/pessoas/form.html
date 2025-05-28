@@ -13,24 +13,18 @@
 
     <main class="main-content">
 
-        <h1>Cadastrar Produto(s)</h1>
-        <form th:action="@{/produtos/cadastrar}" th:object="${produto}" method="post">
+        <h1>Cadastrar Pessoas</h1>
+        <form th:action="@{/pessoas/cadastrar}" th:object="${pessoa}" method="post">
             <div>
                 <label>Nome: </label>
-                <input type="text" th:field="*{nome}" placeholder="Nome Produto" />
+                <input type="text" th:field="*{nome}" placeholder="Nome Completo" />
                 <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
             </div>
 
             <div>
-                <label>Quantidade: </label>
-                <input type="number" th:field="*{quantidade}" />
-                <div th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}"></div>
-            </div>
-
-            <div>
-                <label>Valor: </label>
-                <input type="number" th:field="*{valor}" step="0.01"/>
-                <div th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></div>
+                <label>Idade: </label>
+                <input type="number" th:field="*{idade}" />
+                <div th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></div>
             </div>
 
             <button type="submit" class="botao">Salvar</button>

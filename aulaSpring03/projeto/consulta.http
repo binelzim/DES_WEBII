@@ -1,0 +1,38 @@
+# Definição de variáveis (ambiente “local” do REST Client)
+@base_url = https://studious-carnival-5wx4g9jvp74f7pjx-8080.app.github.dev
+
+### Inserir nova consulta vinculada a Pessoa ID=1
+POST {{base_url}}/api/consultas
+Content-Type: application/json
+
+{
+  "dataHora": "2025-05-28T14:30:00",
+  "descricao": "Exame de rotina",
+  "pessoa": {
+    "id": 1
+  }
+}
+
+###
+
+### Listar todas as consultas
+GET {{base_url}}/api/consultas
+Accept: application/json
+
+###
+
+### Listar consultas de uma pessoa específica
+GET {{base_url}}/api/consultas/pessoa/1
+Accept: application/json
+
+###
+
+### Buscar consulta por ID
+GET {{base_url}}/api/consultas/5
+Accept: application/json
+
+###
+
+### Deletar consulta
+DELETE {{base_url}}/api/consultas/5
+Accept: */*

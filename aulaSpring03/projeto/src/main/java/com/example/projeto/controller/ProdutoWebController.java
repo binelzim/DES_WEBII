@@ -45,7 +45,7 @@ public class ProdutoWebController {
 
         if (result.hasErrors()) {
             // repopula o objeto no formulário em caso de erro
-            return "produtos/form";
+            return "produto/form";
         }
         produtoService.salvarProduto(produto);
         ra.addFlashAttribute("success", "Produto cadastrado com sucesso!");
@@ -64,7 +64,7 @@ public class ProdutoWebController {
     public String detalhesProduto(@PathVariable Long id, Model model) {
         Produto p = produtoService.buscarPorId(id)
             .orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "Produto não encontrada, id: " + id
+                HttpStatus.NOT_FOUND, "Produto não encontrado, id: " + id
             ));
         model.addAttribute("produto", p);
         return "produtos/detalhe";
@@ -73,7 +73,7 @@ public class ProdutoWebController {
     @PostMapping("/{id}/excluir")
     public String excluirProduto(@PathVariable Long id, RedirectAttributes ra) {
         produtoService.deletarProduto(id);
-        ra.addFlashAttribute("success", "Produto excluída com sucesso!");
+        ra.addFlashAttribute("success", "Produto excluído com sucesso!");
         return "redirect:/produtos/listar";
     }
 }
